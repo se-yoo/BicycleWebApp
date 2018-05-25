@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>서울시 자전거대여소 및 편의시설 안내</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e615d1246997a62bfb167b88cf1e2b24&libraries=services?autoload=false"></script>
+<script src="o3510.js"></script>
+ <link rel="shortcut icon" href="favicon.ico">
+<link rel = "stylesheet" href = "o3510.css">
+</head>
+<body>
+
+<div id="startDisplay" onclick="document.getElementById('startDisplay').style.display = 'none';" style="cursor:pointer;">
+	<img src="start.gif" style="width:100%; position:absolute; z-index:6;">
+</div>
+
+<div style="width:100%;text-align:center;">
+<div><img src="title.png" style="width:100%"></div>
+<img src="help.png" id="helpBt" style="width:2%;z-index:5;margin-bottom:25px;margin-right:20px" onmouseover="this.src='help_mouse.png'" onmouseout="this.src='help.png'">
+<img src="button.png" id='button' style="width:15%;z-index:5;margin-bottom:20px;" onmouseover="this.src='button_mouse.png'" onmouseout="this.src='button.png'">
+<img src="button1.png" id='button1' style="width:15%;z-index:5;margin-bottom:20px;" onmouseover="this.src='button1_mouse.png'" onmouseout="this.src='button1.png'">
+<div id="langMenu" style="display:inline;font-size:0.8em;position:absolute;top:14%;margin-left:10px">
+	<p><input type="radio" name="lang" value="Kor" checked>한국어&nbsp;&nbsp;
+	<input type="radio" name="lang" value="Eng">English&nbsp;&nbsp;
+	<input type="radio" name="lang" value="Cng">汉语</p>
+	* 체크 후에 지도를 한번 드래그해주세요<br>(Please drag on the map after choice.)
+</div>
+<div id="helpcontent" style="width:100%; margin-bottom:20px;"><img src="makerInfo.png" style="width:70%"></div>
+</div>
+
+<div id="map" style="width:100%; height:70%; z-index:1;"></div>
+</body>
+</html>
