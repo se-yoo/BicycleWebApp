@@ -9,6 +9,7 @@ window.onload=function () {
 	var lang=document.getElementById("langMenu");
 	lang.style.display="none";
 	
+	daum.maps.disableHD();
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
 		center: new daum.maps.LatLng(37.527517, 126.926494), // 여의도 한강공원
@@ -272,6 +273,7 @@ function addMarker(imageSrc, imageSize, imageOption, latitude, longitude, name, 
 	var marker = new daum.maps.Marker({
 		position: markerPosition,
 		image: markerImage,
+		clickable: true,
 		zIndex: 7
 	});
 	
@@ -287,22 +289,20 @@ function addMarker(imageSrc, imageSize, imageOption, latitude, longitude, name, 
 	
 	// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성
 		var iwContent = content, 
-		iwPosition = markerPosition;
+		iwPosition = markerPosition,
+		iwRemoveable = true;
 
 	// 인포윈도우를 생성
 	var infowindow = new daum.maps.InfoWindow({
 	   position : iwPosition,
 	   content : iwContent,
+	   removable : iwRemoveable,
 	   zIndex : 10
 	});
 
-	// 마커에 클릭이벤트를 등록
-	daum.maps.event.addListener(marker, 'mouseover', function() {
-      // 마커 위에 인포윈도우를 표시
-		infowindow.open(map, marker);  
-	});
-	daum.maps.event.addListener(marker, 'mouseout', function() {
-		infowindow.close();
+	daum.maps.event.addListener(marker, 'click', function() {
+	      // 마커 위에 인포윈도우를 표시합니다
+	    infowindow.open(map, marker);  
 	});
 }
 

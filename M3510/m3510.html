@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+  	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <title>서울시 자전거대여소 및 편의시설 안내</title>
+	
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ebb455baf07dc27305252283be9a6701&libraries=services?autoload=false"></script>
+<script src="m3510.js"></script>
+<link rel = "stylesheet" href = "m3510.css">
+</head>
+<body>
+<div data-role="page" >
+<div id="startDisplay" onclick="document.getElementById('startDisplay').style.display = 'none';" style="cursor:pointer;">
+	<img src="mstart.gif" style="width:100%; position:absolute; z-index:6;">
+</div>
+<div data-role="header" style="text-align:center;background-color:#ffffff">
+	<div><img src="mtitle.png" style="width:100%"></div>
+	<img src="help.png" id="helpBt" style="width:4%;z-index:5;margin-bottom:25px;margin-right:20px" onmouseover="this.src='help_mouse.png'" onmouseout="this.src='help.png'">
+	<img src="button.png" id='button' style="width:27%;z-index:5;margin-bottom:20px;" onmouseover="this.src='button_mouse.png'" onmouseout="this.src='button.png'">
+	<img src="button1.PNG" id='button1' style="width:27%;z-index:5;margin-bottom:20px;" onmouseover="this.src='button1_mouse.PNG'" onmouseout="this.src='button1.PNG'">
+	<img src="button2.png" id='button2' style="width:27%;z-index:5;margin-bottom:20px;" onmouseover="this.src='button2_mouse.png'" onmouseout="this.src='button2.png'">
+	<div id="langMenu" style="font-size:0.8em;color:#d4b7f4;position:relative;bottom:20px;">
+		<p><input type="radio" name="lang" value="Kor" checked>한국어&nbsp;&nbsp;
+		<input type="radio" name="lang" value="Eng">English&nbsp;&nbsp;
+		<input type="radio" name="lang" value="Cng">中國語</p>
+		* 체크 후에 지도를 한번 드래그해주세요<br>(Please drag on the map after choice.)
+	</div>
+	<div id="helpcontent" style="width:100%; margin-bottom:20px;"><img src="mmakerInfo.png" style="width:70%"></div>
+</div>
+
+<div data-role="main" id="map" class="ui-content" style="z-index:1;"></div>
+</div>
+</body>
+</html>
